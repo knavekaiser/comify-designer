@@ -1,0 +1,27 @@
+.header {
+  background: #333;
+  color: white;
+  padding: 0.7rem;
+  .wrapper {
+    margin: auto;
+    padding: 0 1rem;
+    max-width: 82rem;
+  }
+}
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.7rem;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.6);
+  .wrapper {
+    margin: auto;
+    max-width: 82rem;
+    display: flex;
+    justify-content: space-between;
+    .right {
+      display: flex;
+      grid-gap: 1rem;
+    }
+  }
+}

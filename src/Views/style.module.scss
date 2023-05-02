@@ -1,0 +1,219 @@
+.content {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  .actions {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    grid-gap: 1rem;
+  }
+}
+
+.serviceProviders,
+.roomSelection,
+.platformSelection {
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  grid-gap: 2rem;
+  .providers,
+  .rooms,
+  .platforms {
+    display: flex;
+    grid-gap: 1rem;
+    .card {
+      flex: 1;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        margin-bottom: 1rem;
+      }
+      text-align: center;
+      font-size: 0.85rem;
+      hr {
+        opacity: 0.2;
+        margin: 1rem 2rem;
+      }
+      p {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        color: rgba(0, 0, 0, 0.7);
+      }
+      &.serviceProvider {
+        height: 340px;
+        width: 245px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      &.room {
+        height: 370px;
+        width: 205px;
+        img {
+          height: 204px;
+          margin-bottom: 0;
+        }
+      }
+      &.platform {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        width: 365px;
+        height: auto;
+        border-radius: 1.2rem 1.2rem 0 0;
+        background-size: 100% 160%;
+        background-position: bottom;
+        p {
+          padding: 1rem 2rem;
+          padding-top: 0;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+.kitSelection {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 82rem;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: 1fr 15rem;
+  grid-gap: 1rem;
+  max-height: calc(100vh - 10rem);
+  .kitPreview {
+    padding: 1rem;
+    display: grid;
+    justify-content: center;
+    border-radius: 1rem;
+    background: white;
+    font-size: 0.6rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    text-align: center;
+    max-height: 40rem;
+    .imageWrapper {
+      position: relative;
+      height: 100%;
+      max-width: 100%;
+      aspect-ratio: 1.75;
+      margin: auto;
+      img {
+        top: 0;
+        left: 0;
+        position: absolute;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+  .kits {
+    padding-right: 0.5rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 12rem);
+    display: grid;
+    grid-gap: 1rem;
+    grid-auto-rows: min-content;
+    .listCard {
+      text-align: center;
+      font-size: 0.85rem;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.fullDesign {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  .kitPreview {
+    padding: 1rem;
+    display: grid;
+    justify-content: center;
+    border-radius: 1rem;
+    background: white;
+    font-size: 0.6rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    text-align: center;
+    .imageWrapper {
+      position: relative;
+      img {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.listCard {
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  cursor: pointer;
+  .tick {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    // left: 50%;
+    right: 0.7rem;
+    top: 0.7rem;
+    border-radius: 1rem;
+    // bottom: -0.9rem;
+    // transform: translateX(-50%);
+    border: 1px solid #10c29b;
+    display: grid;
+    place-items: center;
+  }
+  .category {
+    width: max-content;
+    margin: auto;
+    font-size: 0.7rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2rem 0.3rem;
+  }
+  &.active {
+    .tick {
+      color: white;
+      font-size: 1.1rem;
+      background: #10c29b;
+    }
+    outline: 1px solid #10c29b;
+    outline-offset: -1px;
+  }
+}
+
+.card {
+  background-image: url("/assets/card_bg.png");
+  height: 340px;
+  width: 245px;
+  background-size: 100% 100%;
+  cursor: pointer;
+  position: relative;
+  .tick {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: 50%;
+    border-radius: 1rem;
+    bottom: -0.9rem;
+    transform: translateX(-50%);
+    border: 1px solid #10c29b;
+    display: grid;
+    place-items: center;
+  }
+  &.active {
+    .tick {
+      color: white;
+      font-size: 1.1rem;
+      background: #10c29b;
+    }
+    filter: drop-shadow(0px 0px 2px #10c29b);
+  }
+}

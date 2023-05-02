@@ -1,0 +1,34 @@
+.App {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr min-content;
+  background: #f5f7fa;
+}
+
+.btn {
+  padding: 0.7rem 2.5rem;
+  background: white;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  cursor: pointer;
+  &:not(.primary) {
+    &:hover {
+      color: #10c29b;
+      border-color: #10c29b;
+    }
+  }
+  &.primary {
+    background: #10c29b;
+    color: white;
+    border-color: #10c29b;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+}
