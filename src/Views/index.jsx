@@ -6,9 +6,9 @@ import s from "./style.module.scss";
 function ServiceProvider({ sp, setSp }) {
   const [providers, setProviders] = useState([
     {
-      id: "ms_team",
-      name: "Microsoft Teams",
-      photo: "/assets/service_providers/teams.png",
+      id: "poly",
+      name: "POLY",
+      photo: "/assets/service_providers/poly.png",
     },
     {
       id: "zoom",
@@ -44,24 +44,24 @@ function ServiceProvider({ sp, setSp }) {
 function RoomSelection({ room, setRoom }) {
   const [rooms, setRooms] = useState([
     {
-      id: "phone_room",
-      name: "Phone Room",
-      photo: "/assets/rooms/phone_room.png",
-      capacity: "1-2 People",
-      size: "5ft x 5ft",
-    },
-    {
       id: "small_room",
       name: "Small Room",
       photo: "/assets/rooms/small_room.png",
-      fullPhoto: "/assets/rooms/small_room_full.png",
-      capacity: "3-7 People",
-      size: "10ft x 15ft",
+      capacity: "1-2 People",
+      size: "5ft x 5ft",
     },
     {
       id: "medium_room",
       name: "Medium Room",
       photo: "/assets/rooms/medium_room.png",
+      capacity: "3-7 People",
+      size: "10ft x 15ft",
+    },
+    {
+      id: "large_room",
+      name: "Large Room",
+      photo: "/assets/rooms/large_room.png",
+      fullPhoto: "/assets/rooms/large_room_full.png",
       capacity: "7-12 People",
       size: "15ft x 20ft",
     },
@@ -130,16 +130,22 @@ function PlatformSelection({ platform, setPlatform }) {
 function KitSelection({ room, kit, setKit }) {
   const [kits, setKits] = useState([
     {
-      id: "A20-020",
-      name: "A20-020",
-      photo: "/assets/kits/A20-020.png",
-      preview: "/assets/kits/A20-020_preview.png",
+      id: "poly20",
+      name: "Poly 20",
+      photo: "/assets/kits/poly20.jpg",
+      preview: "/assets/kits/poly20_preview.png",
     },
     {
-      id: "meetingBoard_65",
-      name: "MeetingBoard 65",
-      photo: "/assets/kits/meetingBoard_65.png",
-      preview: "/assets/kits/meetingBoard_65_preview.png",
+      id: "poly40",
+      name: "Poly 40",
+      photo: "/assets/kits/poly40.jpg",
+      preview: "/assets/kits/poly40_preview.png",
+    },
+    {
+      id: "poly60",
+      name: "Poly 60",
+      photo: "/assets/kits/poly60.jpg",
+      preview: "/assets/kits/poly60_preview.png",
     },
   ]);
   return (
@@ -171,31 +177,21 @@ function KitSelection({ room, kit, setKit }) {
 function ComponentsSelection({ room, kit, components, setComponents }) {
   const [items, setItems] = useState([
     {
-      id: "CTP18",
-      name: "CTP18",
-      photo: "/assets/components/CTP18.png",
-      preview: "/assets/components/CTP18_preview.png",
-      category: "Touch Console",
-    },
-    {
-      id: "WPP20",
-      name: "WPP20",
-      photo: "/assets/components/WPP20.png",
-      preview: "/assets/components/WPP20_preview.png",
-      category: "Wireless Presentation Dongle",
-    },
-    {
-      id: "VCH51",
-      name: "VCH51",
-      photo: "/assets/components/VCH51.png",
-      preview: "/assets/components/VCH51_preview.png",
-      category: "Content Share & BYOD Box",
+      id: "polyE70",
+      name: "Poly E70",
+      photo: "/assets/components/poly_e70.png",
+      preview: "/assets/components/poly_e70_preview.png",
+      category: "",
+      sku: "UVC84-CP965-HYE65",
+      qty: 1,
+      description:
+        "• 1x UVC84 4K, 12x optical USB PTZ camera with power adapter, cables and wall mount; \n• 1x VCR20 remote control \n• 1x CP965 conference phone \n• 1x 7.5m network cable \n• 1 set of CPW65",
     },
   ]);
   return (
     <div className={s.kitSelection}>
       <div className={s.kitPreview}>
-        <h1>Select your Core Kit to start</h1>
+        <h1>Choose Your Preferred Peripherals</h1>
         <div className={s.imageWrapper}>
           <img src={room.fullPhoto} />
           <img src={kit.preview} />
@@ -229,17 +225,37 @@ function ComponentsSelection({ room, kit, components, setComponents }) {
 function AccessorySelection({ room, kit, components, setComponents }) {
   const [items, setItems] = useState([
     {
-      id: "roomPanel",
-      name: "RoomPanel-Teams",
-      photo: "/assets/components/roomPanel.png",
-      preview: "/assets/components/roomPanel_preview.png",
-      category: "Teams Panel",
+      id: "poly_acc_poe",
+      name: "Poly Power Supply",
+      photo: "/assets/components/poly_acc_poe.jpg",
+      sku: "UVC84-CP965-HYE65",
+      qty: 1,
+      description:
+        "• 1x UVC84 4K, 12x optical USB PTZ camera with power adapter, cables and wall mount; \n• 1x VCR20 remote control \n• 1x CP965 conference phone \n• 1x 7.5m network cable \n• 1 set of CPW65",
+    },
+    {
+      id: "poly_acc_usb_ext",
+      name: "Poly USB Extension Cord",
+      photo: "/assets/components/poly_acc_usb_ext.jpg",
+      sku: "PONH-YHRT-CPW65",
+      qty: 1,
+      description:
+        "• 1x UVC84 4K, 12x optical USB PTZ camera with power adapter, cables and wall mount; \n• 1x VCR20 remote control \n• 1x CP965 conference phone \n• 1x 7.5m network cable \n• 1 set of CPW65",
+    },
+    {
+      id: "poly_trio_c60",
+      name: "Poly Trio",
+      photo: "/assets/components/poly_trio_c60.jpg",
+      sku: "MOIU-RTGD-NJHS57",
+      qty: 1,
+      description:
+        "• 1x UVC84 4K, 12x optical USB PTZ camera with power adapter, cables and wall mount; \n• 1x VCR20 remote control \n• 1x CP965 conference phone \n• 1x 7.5m network cable \n• 1 set of CPW65",
     },
   ]);
   return (
     <div className={s.kitSelection}>
       <div className={s.kitPreview}>
-        <h1>Select your Core Kit to start</h1>
+        <h1>Choose Your Preferred room accessories</h1>
         <div className={s.imageWrapper}>
           <img src={room.fullPhoto} />
           <img src={kit.preview} />
@@ -280,19 +296,71 @@ function FullDesign({ room, kit, components, setComponents }) {
       category: "Teams Panel",
     },
   ]);
+  const [tabs, setTabs] = useState([
+    { id: "3dDiagram", label: "3D Diagram" },
+    { id: "wiringDiagram", label: "Wiring Diagram" },
+    { id: "seatingDiagram", label: "Seating Diagram" },
+  ]);
+  const [tab, setTab] = useState("3dDiagram");
   return (
     <div className={s.fullDesign}>
       <div className={s.kitPreview}>
-        <h1>Select your Core Kit to start</h1>
-        <div className={s.imageWrapper}>
-          <img src={room.fullPhoto} />
-          <img src={kit.preview} />
-          {components.map((item) => (
-            <img key={item.id} src={item.preview} />
+        <h1>This is your Room Design</h1>
+        <div className={s.tabs}>
+          {tabs.map((item) => (
+            <button
+              className={`${s.tab} ${tab === item.id ? s.active : ""}`}
+              key={item.id}
+              onClick={() => setTab(item.id)}
+            >
+              {item.label}
+            </button>
           ))}
         </div>
+        {tab === "3dDiagram" && (
+          <div className={s.imageWrapper}>
+            <img src={room.fullPhoto} />
+            <img src={kit.preview} />
+            {components.map((item) => (
+              <img key={item.id} src={item.preview} />
+            ))}
+          </div>
+        )}
+        {tab === "wiringDiagram" && (
+          <div className={s.img}>
+            <img src="/assets/rooms/large_room_wiring.jpg" />
+          </div>
+        )}
+        {tab === "seatingDiagram" && (
+          <div className={s.img}>
+            <img src="/assets/rooms/large_room_seating.png" />
+          </div>
+        )}
+
+        <table className={s.cart} cellSpacing="0">
+          <thead>
+            <tr>
+              <th>Picture</th>
+              <th>SKU</th>
+              <th>Description</th>
+              <th>Qty</th>
+            </tr>
+          </thead>
+          <tbody>
+            {components.map((item) => (
+              <tr key={item.id}>
+                <td>
+                  <img src={item.photo} />
+                </td>
+                <td>{item.sku}</td>
+                <td>{item.description}</td>
+                <td>x {item.qty}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div className={s.kits}>
+      {/* <div className={s.kits}>
         {items.map((item) => (
           <ListCard
             key={item.id}
@@ -309,7 +377,7 @@ function FullDesign({ room, kit, components, setComponents }) {
             <p className={s.category}>{item.category}</p>
           </ListCard>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -348,11 +416,11 @@ export default function Home() {
     <div className={s.content}>
       {step === 1 && <ServiceProvider sp={sp} setSp={setSp} />}
       {step === 2 && <RoomSelection room={room} setRoom={setRoom} />}
-      {step === 3 && (
+      {/* {step === 3 && (
         <PlatformSelection platform={platform} setPlatform={setPlatform} />
-      )}
-      {step === 4 && <KitSelection room={room} kit={kit} setKit={setKit} />}
-      {step === 5 && (
+      )} */}
+      {step === 3 && <KitSelection room={room} kit={kit} setKit={setKit} />}
+      {step === 4 && (
         <ComponentsSelection
           room={room}
           kit={kit}
@@ -360,7 +428,7 @@ export default function Home() {
           setComponents={setComponents}
         />
       )}
-      {step === 6 && (
+      {step === 5 && (
         <AccessorySelection
           room={room}
           kit={kit}
@@ -368,7 +436,7 @@ export default function Home() {
           setComponents={setComponents}
         />
       )}
-      {step === 7 && (
+      {step === 6 && (
         <FullDesign
           room={room}
           kit={kit}
@@ -376,28 +444,48 @@ export default function Home() {
           setComponents={setComponents}
         />
       )}
-      <div className={s.actions}>
-        <button
-          className="btn"
-          disabled={step === 1}
-          onClick={() => setStep(step - 1)}
-        >
-          Back
-        </button>
-        <button
-          className="btn primary"
-          disabled={
-            (step === 1 && !sp) ||
-            (step === 2 && !room) ||
-            (step === 3 && !platform) ||
-            (step === 4 && !kit) ||
-            step === 6
-          }
-          onClick={() => setStep(step + 1)}
-        >
-          Next
-        </button>
-      </div>
+      {step < 6 ? (
+        <div className={s.actions}>
+          <button
+            className="btn"
+            disabled={step === 1}
+            onClick={() => setStep(step - 1)}
+          >
+            Back
+          </button>
+          <button
+            className="btn primary"
+            disabled={
+              (step === 1 && !sp) ||
+              (step === 2 && !room) ||
+              (step === 3 && !kit) ||
+              (step === 4 && !components.length) ||
+              step === 6
+            }
+            onClick={() => setStep(step + 1)}
+          >
+            Next
+          </button>
+        </div>
+      ) : (
+        <div className={s.actions}>
+          <button
+            className="btn"
+            onClick={() => {
+              setStep(1);
+              setSp(null);
+              setRoom(null);
+              setPlatform(null);
+              setKit(null);
+              setComponents([]);
+            }}
+          >
+            Start Over
+          </button>
+          <button className="btn">Ask Support</button>
+          <button className="btn">Save Proposal</button>
+        </div>
+      )}
     </div>
   );
 }
