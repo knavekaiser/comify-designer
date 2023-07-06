@@ -1,11 +1,18 @@
 .header {
-  background: #333;
+  background: white;
+  // border-bottom: 1px dashed rgb(212, 212, 212);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.05);
   color: white;
   padding: 0.7rem;
   .wrapper {
     margin: auto;
     padding: 0 1rem;
     max-width: 82rem;
+    .left {
+      svg {
+        height: 1.75rem;
+      }
+    }
   }
 }
 
